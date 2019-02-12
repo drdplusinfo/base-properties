@@ -12,7 +12,7 @@ abstract class AbstractSimplePropertyTest extends PropertyTest
     /**
      * @test
      */
-    public function I_can_get_property_easily(): void
+    public function I_can_get_property_easily()
     {
         /** @var BaseProperty|string $sutClass */
         $sutClass = self::getSutClass();
