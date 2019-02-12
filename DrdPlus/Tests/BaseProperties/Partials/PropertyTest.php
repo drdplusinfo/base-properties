@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace DrdPlus\Tests\BaseProperties\Partials;
 
-use DrdPlus\BaseProperties\BaseProperty;
 use DrdPlus\Codes\Partials\AbstractCode;
 use DrdPlus\BaseProperties\Property;
 use Granam\Tests\Tools\TestWithMockery;
@@ -22,15 +21,17 @@ abstract class PropertyTest extends TestWithMockery
     public function I_can_use_it_as_generic_group_property(): void
     {
         $propertyClass = self::getSutClass();
-        self::assertTrue(
-            \is_a($propertyClass, $this->getGenericGroupPropertyClassName(), true),
-            $propertyClass . ' does not belongs into ' . $this->getGenericGroupPropertyClassName()
-        );
+        foreach ($this->getGenericGroupsPropertyClassNames() as $genericGroupsPropertyClassName) {
+            self::assertTrue(
+                \is_a($propertyClass, $genericGroupsPropertyClassName, true),
+                $propertyClass . ' does not belongs into ' . $genericGroupsPropertyClassName
+            );
+        }
     }
 
-    private function getGenericGroupPropertyClassName(): string
+    protected function getGenericGroupsPropertyClassNames(): array
     {
-        return BaseProperty::class;
+        return [Property::class];
     }
 
     /**
