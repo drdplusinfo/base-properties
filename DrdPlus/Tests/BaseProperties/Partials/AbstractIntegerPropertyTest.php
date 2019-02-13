@@ -6,7 +6,7 @@ namespace DrdPlus\Tests\BaseProperties\Partials;
 use DrdPlus\BaseProperties\Partials\AbstractIntegerProperty;
 use Granam\Tools\ValueDescriber;
 
-abstract class AbstractIntegerPropertyTest extends AbstractStoredPropertyTest
+abstract class AbstractIntegerPropertyTest extends AbstractSimplePropertyTest
 {
     /**
      * @return int[]

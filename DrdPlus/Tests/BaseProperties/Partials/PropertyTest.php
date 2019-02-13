@@ -5,6 +5,7 @@ namespace DrdPlus\Tests\BaseProperties\Partials;
 
 use DrdPlus\Codes\Partials\AbstractCode;
 use DrdPlus\BaseProperties\Property;
+use DrdPlus\Codes\Properties\PropertyCode;
 use Granam\Tests\Tools\TestWithMockery;
 
 abstract class PropertyTest extends TestWithMockery
@@ -34,9 +35,6 @@ abstract class PropertyTest extends TestWithMockery
         return [Property::class];
     }
 
-    /**
-     * @return string
-     */
     protected function getPropertyNamespace(): string
     {
         return \preg_replace('~[\\\]\w+$~', '', self::getSutClass());
@@ -56,9 +54,6 @@ abstract class PropertyTest extends TestWithMockery
         self::assertSame($codeClass::getIt($this->getExpectedPropertyCode()), $sut->getCode());
     }
 
-    /**
-     * @return string
-     */
     protected function getExpectedPropertyCode(): string
     {
         $propertyBaseName = $this->getSutBaseName();
@@ -67,9 +62,6 @@ abstract class PropertyTest extends TestWithMockery
         return \strtolower($underScoredClassName);
     }
 
-    /**
-     * @return string
-     */
     protected function getSutBaseName(): string
     {
         return \preg_replace('~^.*[\\\]([^\\\]+)$~', '$1', self::getSutClass());
@@ -94,8 +86,8 @@ abstract class PropertyTest extends TestWithMockery
         );
     }
 
-    /**
-     * @return string
-     */
-    abstract protected function getExpectedCodeClass(): string;
+    protected function getExpectedCodeClass(): string
+    {
+        return PropertyCode::class;
+    }
 }

@@ -8,7 +8,6 @@ use DrdPlus\Codes\Properties\PropertyCode;
 
 abstract class AbstractSimplePropertyTest extends PropertyTest
 {
-
     /**
      * @test
      */
