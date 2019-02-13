@@ -3,11 +3,11 @@ declare(strict_types=1);
 
 namespace DrdPlus\BaseProperties\Partials;
 
-use Doctrineum\Integer\IntegerEnum;
 use DrdPlus\Codes\Properties\PropertyCode;
 use DrdPlus\BaseProperties\Property;
 use Granam\Integer\IntegerInterface;
 use Granam\Integer\Tools\ToInteger;
+use Granam\IntegerEnum\IntegerEnum;
 
 /**
  * @method PropertyCode getCode()
