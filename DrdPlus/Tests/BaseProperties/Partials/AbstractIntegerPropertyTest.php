@@ -70,4 +70,17 @@ abstract class AbstractIntegerPropertyTest extends AbstractSimplePropertyTest
 ANNOTATION
             , $reflectionClass->getDocComment());
     }
+
+    /**
+     * @test
+     */
+    public function Same_instance_is_returned_for_same_value()
+    {
+        /** @var AbstractIntegerProperty $propertyClass */
+        $propertyClass = self::getSutClass();
+        /** @var AbstractIntegerProperty $property */
+        $property = $propertyClass::getIt(123);
+        self::assertSame(123, $property->getValue());
+        self::assertSame($property, $propertyClass::getIt(123));
+    }
 }

@@ -11,6 +11,7 @@ use Granam\IntegerEnum\IntegerEnum;
 
 /**
  * @method PropertyCode getCode()
+ * @method static AbstractIntegerProperty getEnum(int|IntegerInterface $value)
  */
 abstract class AbstractIntegerProperty extends IntegerEnum implements Property
 {
@@ -21,15 +22,6 @@ abstract class AbstractIntegerProperty extends IntegerEnum implements Property
     public static function getIt($value)
     {
         return static::getEnum($value);
-    }
-
-    /**
-     * @param int|IntegerInterface $value
-     * @return AbstractIntegerProperty|IntegerEnum
-     */
-    public static function getEnum($value): IntegerEnum
-    {
-        return new static($value);
     }
 
     /**
