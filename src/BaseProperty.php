@@ -11,5 +11,5 @@ use Granam\Integer\IntegerInterface;
  */
 interface BaseProperty extends Property, IntegerInterface
 {
-
+    public function getValue(): int;
 }
