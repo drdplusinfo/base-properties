@@ -5,7 +5,7 @@ namespace DrdPlus\Tests\BaseProperties\Partials;
 use DrdPlus\Codes\Partials\AbstractCode;
 use DrdPlus\BaseProperties\Property;
 use DrdPlus\Codes\Properties\PropertyCode;
-use Granam\Tests\Tools\TestWithMockery;
+use Granam\TestWithMockery\TestWithMockery;
 
 abstract class PropertyTest extends TestWithMockery
 {
