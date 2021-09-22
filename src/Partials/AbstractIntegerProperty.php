@@ -31,9 +31,7 @@ abstract class AbstractIntegerProperty extends IntegerEnum implements Property
      */
     public function add($value)
     {
-        $increased = static::getIt($this->getValue() + ToInteger::toInteger($value));
-
-        return $increased;
+        return static::getIt($this->getValue() + ToInteger::toInteger($value));
     }
 
     /**
@@ -44,8 +42,6 @@ abstract class AbstractIntegerProperty extends IntegerEnum implements Property
      */
     public function sub($value)
     {
-        $decreased = static::getIt($this->getValue() - ToInteger::toInteger($value));
-
-        return $decreased;
+        return static::getIt($this->getValue() - ToInteger::toInteger($value));
     }
 }

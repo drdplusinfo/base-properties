@@ -60,9 +60,7 @@ trait WithHistoryTrait
     protected function formatToSentence(string $string): string
     {
         \preg_match_all('~[[:upper:]]?[[:lower:]]*~', $string, $matches);
-        $captures = \array_filter($matches[0], function ($capture) {
-            return $capture !== '';
-        });
+        $captures = \array_filter($matches[0], fn($capture) => $capture !== '');
 
         return \implode(' ', array_map('lcfirst', $captures));
     }
